@@ -1,4 +1,4 @@
-defmodule Mix.Tasks.Torch.Gen.Context do
+defmodule Mix.Tasks.Torch.Gen.Html do
   @moduledoc """
   Light wrapper module around phx.gen.context. Installs and uninstalls context
   templates around running the phoenix generator.
@@ -16,12 +16,12 @@ defmodule Mix.Tasks.Torch.Gen.Context do
 
   def run([project_name, format, context | args]) do
     Mix.Task.run("torch.install", [project_name, format])
-    Mix.Task.run("phx.gen.context", [context | args])
+    Mix.Task.run("phx.gen.html", [context | args])
     Mix.Task.run("torch.uninstall", [project_name, format])
 
     Mix.shell().info("""
     #{hr()}
-                            #{IO.ANSI.yellow()}Torch generated #{context} context! #{
+                            #{IO.ANSI.yellow()}Torch generated hmtl for #{context}! #{
       IO.ANSI.reset()
     }
     #{hr()}
