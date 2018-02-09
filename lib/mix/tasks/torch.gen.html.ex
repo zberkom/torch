@@ -14,10 +14,12 @@ defmodule Mix.Tasks.Torch.Gen.Html do
       mix torch.gen.context Accounts User users --no-schema
   """
 
-  def run([project_name, format, context | args]) do
-    Mix.Task.run("torch.install", [project_name, format])
+  import Torch.Config, only: [otp_app: 0, template_format: 0]
+
+  def run([context | args]) do
+    Mix.Task.run("torch.install", [otp_app, template_format])
     Mix.Task.run("phx.gen.html", [context | args])
-    Mix.Task.run("torch.uninstall", [project_name, format])
+    Mix.Task.run("torch.uninstall", [otp_app, template_format])
 
     Mix.shell().info("""
     #{hr()}

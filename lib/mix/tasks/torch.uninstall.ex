@@ -12,7 +12,7 @@ defmodule Mix.Tasks.Torch.Uninstall do
       mix torch.uninstall my_app slim
   """
 
-  def run([project_name, format]) do
+  def run([_opt_app, format]) do
     File.rm("priv/templates/phx.gen.html/controller_test.exs")
     File.rm("priv/templates/phx.gen.html/controller.ex")
     File.rm("priv/templates/phx.gen.html/edit.html.#{format}")
@@ -26,6 +26,5 @@ defmodule Mix.Tasks.Torch.Uninstall do
     File.rm("priv/templates/phx.gen.context/schema_access.ex")
     File.rm("priv/templates/phx.gen.context/test_cases.exs")
     File.rm("priv/templates/phx.gen.context/context_test.exs")
-    File.rm("lib/#{project_name}_web/templates/layout/admin.html.#{format}")
   end
 end
