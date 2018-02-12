@@ -1,5 +1,10 @@
-<h2>Edit <%= schema.human_singular %></h2>
+<section class="torch torch-toolbar-container">
+  <div class="torch-toolbar">
+    <h2>Edit <%= String.capitalize(schema.human_singular) %></h2>
+    <%%= link "Cancel", to: Routes.<%= schema.route_helper %>_path(@conn, :index), class: "torch-button" %>
+  </div>
+</section>
 
-<%%= render "form.html", Map.put(assigns, :action, Routes.<%= schema.route_helper %>_path(@conn, :update, @<%= schema.singular %>)) %>
-
-<span><%%= link "Back", to: Routes.<%= schema.route_helper %>_path(@conn, :index) %></span>
+<section class="torch torch-content">
+  <%%= render "form.html", Map.put(assigns, :action, Routes.<%= schema.route_helper %>_path(@conn, :update, @<%= schema.singular %>)) %>
+</section>

@@ -1,13 +1,18 @@
-<h2>Show <%= schema.human_singular %></h2>
+<section class="torch torch-toolbar-container">
+  <div class="torch-toolbar">
+    <h2>Show <%= String.capitalize(schema.human_singular) %></h2>
+    <%%= link "Edit", to: Routes.<%= schema.route_helper %>_path(@conn, :edit, @<%= schema.singular %>), class: "torch-button" %>
+    <%%= link "Back", to: Routes.<%= schema.route_helper %>_path(@conn, :index), class: "torch-button" %>
+  </div>
+</section>
 
-<ul>
-<%= for {k, _} <- schema.attrs do %>
-  <li>
-    <strong><%= Phoenix.Naming.humanize(Atom.to_string(k)) %>:</strong>
-    <%%= @<%= schema.singular %>.<%= k %> %>
-  </li>
-<% end %>
-</ul>
-
-<span><%%= link "Edit", to: Routes.<%= schema.route_helper %>_path(@conn, :edit, @<%= schema.singular %>) %></span>
-<span><%%= link "Back", to: Routes.<%= schema.route_helper %>_path(@conn, :index) %></span>
+<section class="torch torch-content">
+  <ul>
+    <%= for {k, _} <- schema.attrs do %>
+      <li>
+        <strong><%= Phoenix.Naming.humanize(Atom.to_string(k)) %>:</strong>
+        <%%= @<%= schema.singular %>.<%= k %> %>
+      </li>
+    <% end %>
+  </ul>
+</section>
