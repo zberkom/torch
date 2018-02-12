@@ -15,6 +15,23 @@
       <%= schema.singular %>
     end
 
+    test "paginate_<%= schema.plural %>/1 returns paginated list of <%= schema.plural %>" do
+      for _ <- 1..20 do
+        <%= schema.singular %>_fixture()
+      end
+
+      {:ok, %{<%= schema.plural %>: <%= schema.plural %>} = page} = <%= inspect context.alias %>.paginate_<%= schema.plural %>(%{})
+
+      assert length(<%= schema.plural %>) == 15
+      assert page.page_number == 1
+      assert page.page_size == 15
+      assert page.total_pages == 2
+      assert page.total_entries == 20
+      assert page.distance == 5
+      assert page.sort_field == "inserted_at"
+      assert page.sort_direction == "desc"
+    end
+
     test "list_<%= schema.plural %>/0 returns all <%= schema.plural %>" do
       <%= schema.singular %> = <%= schema.singular %>_fixture()
       assert <%= inspect context.alias %>.list_<%= schema.plural %>() == [<%= schema.singular %>]
