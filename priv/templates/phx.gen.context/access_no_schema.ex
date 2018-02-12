@@ -2,6 +2,19 @@
   alias <%= inspect schema.module %>
 
   @doc """
+  Paginate the list of <%= schema.plural %> using filtrex
+  filters.
+
+  ## Examples
+
+      iex> list_<%= schema.plural %>(%{})
+      %{<%= schema.plural %>: [%<%= inspect schema.alias %>{}], ...}
+  """
+  def paginate_<%= schema.plural %>(params \\ %{}) do
+    raise "TODO"
+  end
+
+  @doc """
   Returns the list of <%= schema.plural %>.
 
   ## Examples

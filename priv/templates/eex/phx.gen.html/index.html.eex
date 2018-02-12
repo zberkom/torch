@@ -50,13 +50,13 @@
       <%= for {key, type} <- schema.attrs, type in [:boolean] do %>
         <div class="field">
           <label><%= Phoenix.Naming.humanize(Atom.to_string(key)) %></label>
-          <%%= filter_<%= type %>_input(:<%= schema.singular %>, :<%= key %>, @conn.params) %>
+          <%%= filter_boolean_input(:<%= schema.singular %>, :<%= key %>, @conn.params) %>
         </div>
       <% end %>
       <%= for {key, type} <- schema.attrs, type in [:date, :datetime, :utc_datetime] do %>
         <div class="field">
           <label><%= Phoenix.Naming.humanize(Atom.to_string(key)) %></label>
-          <%%= filter_<%= type %>_input(:<%= schema.singular %>, :<%= key %>, @conn.params) %>
+          <%%= filter_date_input(:<%= schema.singular %>, :<%= key %>, @conn.params) %>
         </div>
       <% end %>
       <button type="submit" class="torch-button">Search</button>

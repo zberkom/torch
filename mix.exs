@@ -27,7 +27,9 @@ defmodule Torch.MixProject do
   defp deps do
     [
       {:phoenix, "~> 1.3"},
-      {:phoenix_html, "~> 2.10"}
+      {:phoenix_html, "~> 2.10"},
+      {:scrivener_ecto, ">= 1.2.1"},
+      {:filtrex, "~> 0.4.1"}
     ]
   end
 

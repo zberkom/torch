@@ -23,7 +23,7 @@ defmodule Mix.Tasks.Torch.Gen.Html do
 
     Mix.shell().info("""
     #{hr()}
-                            #{IO.ANSI.yellow()}Torch generated hmtl for #{context}! #{
+                            #{IO.ANSI.yellow()}Torch generated html for #{context}! #{
       IO.ANSI.reset()
     }
     #{hr()}

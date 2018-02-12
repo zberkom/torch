@@ -4,9 +4,15 @@ defmodule <%= inspect context.web_module %>.<%= inspect Module.concat(schema.web
   alias <%= inspect context.module %>
   alias <%= inspect schema.module %>
 
-  def index(conn, _params) do
-    <%= schema.plural %> = <%= inspect context.alias %>.list_<%= schema.plural %>()
-    render(conn, "index.html", <%= schema.plural %>: <%= schema.plural %>)
+  def index(conn, params) do
+    case <%= inspect context.alias %>.paginate_<%= schema.plural %>(params) do
+      {:ok, assigns} ->
+        render(conn, "index.html", assigns)
+      error ->
+        conn
+        |> put_flash(:error, "There was an error rendering <%= schema.human_plural %>. #{inspect(error)}")
+        |> redirect(to: Routes.<%= schema.route_helper %>_path(conn, :index))
+    end
   end
 
   def new(conn, _params) do
