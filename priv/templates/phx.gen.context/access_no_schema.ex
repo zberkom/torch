@@ -152,9 +152,8 @@
       <%= for {name, type} <- schema.attrs do %><%= cond do %>
         <% type in [:string, :text] -> %>text <%= inspect name %>
         <% type in [:integer, :number] -> %>number <%= inspect name %>
-        <% type in [:naive_datetime, :utc_datetime, :datetime] -> %>datetime <%= inspect name %>
+        <% type in [:naive_datetime, :utc_datetime, :datetime, :date] -> %>date <%= inspect name %>
         <% type in [:boolean] -> %>boolean <%= inspect name %>
-        <% type in [:date] -> %>date <%= inspect name %>
         <% true -> %> #TODO add config for <%= name %> of type <%= type %>
       <% end %><% end %>
     end
