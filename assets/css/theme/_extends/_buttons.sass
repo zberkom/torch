@@ -1,3 +1,33 @@
 %base-button-styles
-  display: flex
-  align-items: center
+  transition: all 250ms ease-in-out
+  font-family: $helvetica-neue
+  padding: 9px 12px
+  cursor: pointer
+  background-color: $gallery-gray
+  color: $alabaster-gray
+  border: 1px solid transparent
+
+%default-button
+  @extend %base-button-styles
+
+  &:hover
+    background-color: darken($gallery-gray, 15%)
+
+%add-button
+  @extend %base-button-styles
+  background-color: $ir-red
+  color: $white
+  border-color: transparent
+
+  &:before
+    content: "+"
+    display: inline-block
+    font-size: 22px
+    line-height: 12px
+    font-weight: bold
+    margin-right: 3px
+
+  &:hover
+    background-color: darken($ir-red, 15%)
+
+

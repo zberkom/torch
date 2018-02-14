@@ -1,6 +1,10 @@
+<section id="torch-toolbar">
+  <div class="torch-container">
+    <%%= link "New <%= schema.human_singular %>", to: Routes.<%= schema.route_helper %>_path(@conn, :new)m %>
+  </div>
+</section>
 <section class="torch torch-toolbar-container">
   <div class="torch-toolbar">
-    <h2><%= String.capitalize(schema.human_plural) %></h2>
     <span><%%= link "New <%= schema.human_singular %>", to: Routes.<%= schema.route_helper %>_path(@conn, :new) %></span>
   </div>
 </section>

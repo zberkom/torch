@@ -42,6 +42,7 @@ defmodule Torch.Router do
         get("/torch.js", AssetsController, :assets)
         get("/base.css", AssetsController, :assets)
         get("/theme.css", AssetsController, :assets)
+        get("/torch-logo.png", AssetsController, :assets)
       end
     end
   end

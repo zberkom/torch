@@ -5,25 +5,27 @@
   </head>
 
   <body>
-    <section class="torch torch-header">
-      <div class="torch-account">
-        <nav>
-          <ul>
-            <li><a href="/">user@infinite.red</a></li>
-            <li><a href="/">Logout</a></li>
-          </ul>
-        </nav>
-      </div>
+    <header>
+      <section id="torch-account-info">
+        <div class="torch-container">
+          <a href="/">user@infinite.red</a>
+          <a href="/">Logout</a>
+        </div>
+      </section>
 
-      <header class="torch-main-header">
-        <h1>Torch Admin</h1>
-        <nav>
-          <ul>
-            <!-- Your admin navigation links here -->
-          </ul>
-        </nav>
-      </header>
-    </section>
+      <section id="torch-nav">
+        <div class="torch-container">
+          <div class="torch-logo">
+            <a href="/">
+              <h3>Torch</h3>
+            </a>
+          </div>
+          <nav>
+            <a href="/">Posts</a>
+          </nav>
+        </div>
+      </section>
+    </header>
 
     <section class="torch">
       <%= render @view_module, @view_template, assigns %>
