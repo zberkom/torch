@@ -21,9 +21,9 @@ var plugins = [
 
 module.exports = {
   entry: {
-    'js/torch.js': './js/torch.js',
-    'css/torch-base.css': './css/base.sass',
-    'css/torch-theme.css': './css/theme.sass'
+    'torch.js': './js/torch.js',
+    'base.css': './css/base.sass',
+    'theme.css': './css/theme.sass'
   },
   output: {
     path: path.resolve(__dirname, '../priv/static/'),

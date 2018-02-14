@@ -21,6 +21,10 @@ defmodule Mix.Tasks.Torch.Gen.Context do
     Mix.Task.run("torch.uninstall", [otp_app, template_format])
 
     Mix.shell().info("""
+    Ensure `use Torch.Router` is added to the router block of your `my_app_web.ex` file.
+    """)
+
+    Mix.shell().info("""
     #{hr()}
                             #{IO.ANSI.yellow()}Torch generated #{context} context! #{
       IO.ANSI.reset()
