@@ -10,7 +10,7 @@
 
 %default-button
   @extend %base-button-styles
-  border-color: $dark-gray
+  border-color: rgba(0, 0, 0, 0.1)
 
   &:hover
     background-color: darken($gallery-gray, 15%)
@@ -24,8 +24,6 @@
     background-color: darken($ir-red, 15%)
 
 %add-button
-  @extend %red-button
-
   &:before
     content: "+"
     display: inline-block
