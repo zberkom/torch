@@ -3,7 +3,8 @@
   "dependencies": {
     "jquery": "^3.0.0",
     "jquery.maskedinput": "^1.4.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "pikaday": "^1.7.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.5",

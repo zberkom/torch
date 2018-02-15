@@ -30,6 +30,6 @@
     <section class="torch">
       <%= render @view_module, @view_template, assigns %>
     </section>
-    <script src="<%= Routes.static_path(@conn, "/js/torch.js") %>"></script>
+    <script src="<%= Routes.static_path(@conn, "/torch/torch.js") %>"></script>
   </body>
 </html>

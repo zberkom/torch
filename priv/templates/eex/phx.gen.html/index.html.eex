@@ -6,7 +6,7 @@
 
 <section id="torch-filters">
   <h3>Find <%= schema.human_plural %></h3>
-  <%%= form_tag @conn.request_path, method: :get, id: "filters" do %>
+  <%%= form_tag @conn.request_path, method: :get, id: "torch-filters-form" do %>
     <%= for {key, type} <- schema.attrs, type in [:string, :text] do %>
       <div class="field">
         <label><%= Phoenix.Naming.humanize(Atom.to_string(key)) %></label>
