@@ -2,8 +2,16 @@ form#torch-form
   background-color: $white
   padding: 20px
 
+  .torch-form-error
+    text-align: center
+    background-color: $orange
+    color: $white
+    padding: 5px
+    margin-bottom: 20px
+
   .torch-form-group
     display: flex
+    flex-wrap: wrap
     margin-bottom: 20px
 
     label
@@ -26,8 +34,16 @@ form#torch-form
     select
       @extend %select-input
 
+    .help-block
+      margin-left: calc(30% + 12px)
+      width: 70%
+      text-transform: capitalize
+      color: $orange
+      font-size: 14px
+
   .torch-submit-form
     text-align: right
 
     .torch-submit-button
       @extend %red-button
+
