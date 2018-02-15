@@ -1,0 +1,64 @@
+section#torch-table
+  table
+    color: $dark-gray
+    font-size: 14px
+    font-family: $helvetica-neue
+    width: 100%
+    background-color: $alabaster-gray
+
+    th
+      border: 1px solid lighten($dark-gray, 15%);
+      border-left: none
+      background-color: $ir-red
+      padding: 0
+      color: $white
+      vertical-align: middle
+
+      &:hover
+        background-color: darken($ir-red, 15%)
+
+      &:first-child
+        border-left: 1px solid lighten($dark-gray, 15%);
+
+      .caret
+        border-left: 5px solid transparent
+        border-right: 5px solid transparent
+        display: inline-block
+        height: 0
+        margin-left: 5px
+        margin-top: 5px
+        position: absolute
+        right: 10px
+        top: 12px
+        width: 0
+
+      a,
+      span:not(.caret)
+        position: relative
+        text-decoration: none
+        color: $white
+        padding: 12px 10px
+        display: block
+
+      a.active.desc
+        .caret
+          border-top: 5px solid $white
+
+      a.active.asc
+        .caret
+          border-bottom: 5px solid $white
+
+    td
+      overflow: hidden
+      text-overflow: ellipsis
+      border: 1px solid lighten($dark-gray, 15%);
+      border-left: none
+      vertical-align: middle
+      padding: 12px 10px
+
+      &:first-child
+        border-left: 1px solid lighten($dark-gray, 15%);
+
+      a
+        color: $ir-red
+        text-decoration: none
