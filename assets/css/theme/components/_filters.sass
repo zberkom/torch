@@ -8,7 +8,7 @@ section#torch-filters
   hr
     appearance: none
     border: none
-    border-bottom: 1px solid $dark-gray
+    border-bottom: 1px solid darken($gallery-gray, 10%)
     margin: 20px 0 10px
 
   .field
@@ -22,11 +22,11 @@ section#torch-filters
     select
       @extend %select-input
       margin-right: 20px
-      width: calc(30% - 20px)
+      width: calc(35% - 20px)
 
     input
       @extend %text-input
-      width: 70%
+      width: 65%
 
       &.datepicker
         width: calc(50% - 10px)
