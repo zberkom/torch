@@ -22,7 +22,7 @@ defmodule Mix.Tasks.Torch.Gen.Html do
     Mix.Task.run("torch.uninstall", [otp_app, template_format])
 
     Mix.shell().info("""
-    Add the following to your endpoint.ex:
+    Ensure the following is added to your endpoint.ex:
 
         plug(
           Plug.Static,
