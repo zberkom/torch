@@ -22,7 +22,16 @@ defmodule Mix.Tasks.Torch.Gen.Html do
     Mix.Task.run("torch.uninstall", [otp_app, template_format])
 
     Mix.shell().info("""
-    Ensure `use Torch.Router` is added to the router block of your `my_app_web.ex` file.
+    Add the following to your endpoint.ex:
+
+        plug(
+          Plug.Static,
+          at: "/torch",
+          from: {:torch, "priv/static"},
+          gzip: true,
+          cache_control_for_etags: "public, max-age=86400",
+          headers: [{"access-control-allow-origin", "*"}]
+        )
     """)
 
     Mix.shell().info("""

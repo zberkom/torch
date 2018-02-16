@@ -1,5 +1,7 @@
 import Pikaday from 'pikaday'
 
+// Phoenix html copied here since I ran into extensive issues trying to import
+// from the dep.
 ;(function () {
   function buildHiddenInput (name, value) {
     var input = document.createElement('input')
@@ -107,5 +109,14 @@ window.onload = () => {
 
   slice.call(document.querySelectorAll('.datepicker'), 0).forEach((field) => {
     new Pikaday({field: field, theme: 'torch-datepicker'})
+  })
+
+  slice.call(document.querySelectorAll('.torch-flash-close'), 0).forEach((field) => {
+    field.addEventListener('click', function (e) {
+      let el = field
+      let selector = 'torch-flash'
+      while ((el = el.parentElement) && !((el.matches || el.matchesSelector).call(el, selector)))
+      el.parentNode.removeChild(el)
+    })
   })
 }

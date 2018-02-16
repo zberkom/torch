@@ -29,9 +29,8 @@
       </section>
     </header>
 
-    <section class="torch">
-      <%= render @view_module, @view_template, assigns %>
-    </section>
+    <%= Torch.FlashView.render("_flash_messages.html", assigns) %>
+    <%= render @view_module, @view_template, assigns %>
     <script src="<%= Routes.static_path(@conn, "/torch/torch.js") %>"></script>
   </body>
 </html>

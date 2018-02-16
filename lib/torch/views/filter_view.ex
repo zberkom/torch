@@ -43,6 +43,40 @@ defmodule Torch.FilterView do
   end
 
   @doc """
+  Generates a number filter type select box for a given `number` field.
+
+  ## Example
+
+      number_filter_select(:post, :rating, params)
+  """
+  def number_filter_select(prefix, field, params) do
+    prefix_str = to_string(prefix)
+    {selected, _value} = find_param(params[prefix_str], field)
+
+    opts = [
+      {"Equals", "#{prefix}[#{field}_equals]"},
+      {"Greater Than", "#{prefix}[#{field}_greater_than]"},
+      {"Greater Than Or Equal", "#{prefix}[#{field}_greater_than_or]"},
+      {"Less Than", "#{prefix}[#{field}_less_than]"}
+    ]
+
+    select(:filters, "", opts, class: "filter-type", value: "#{prefix}[#{selected}]")
+  end
+
+  @doc """
+  Generates a filter input for a number field.
+
+  ## Example
+
+      filter_number_input(:post, :rating, params)
+  """
+  def filter_number_input(prefix, field, params) do
+    prefix_str = to_string(prefix)
+    {name, value} = find_param(params[prefix_str], field, :number)
+    text_input(prefix, String.to_atom(name), value: value, type: "number")
+  end
+
+  @doc """
   Generates a filter input for a string field.
 
   ## Example
@@ -143,7 +177,7 @@ defmodule Torch.FilterView do
     tag(:input, type: "text", class: "datepicker #{class}", name: name, value: value)
   end
 
-  defp find_param(params, pattern) do
+  defp find_param(params, pattern, type \\ :string) do
     pattern = to_string(pattern)
 
     result =
@@ -151,9 +185,10 @@ defmodule Torch.FilterView do
         String.starts_with?(key, pattern)
       end)
 
-    case result do
-      nil -> {"#{pattern}_contains", nil}
-      other -> other
+    cond do
+      result == nil && type == :string -> {"#{pattern}_contains", nil}
+      result == nil && type == :number -> {"#{pattern}_equals", nil}
+      result != nil -> result
     end
   end
 end
