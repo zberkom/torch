@@ -29,7 +29,9 @@ defmodule Torch.MixProject do
       {:phoenix, "~> 1.3"},
       {:phoenix_html, "~> 2.10"},
       {:scrivener_ecto, ">= 1.2.1"},
-      {:filtrex, "~> 0.4.1"}
+      {:filtrex, "~> 0.4.1"},
+      {:credo, "~> 0.5", only: [:dev, :test]},
+      {:ex_doc, "~> 0.13", only: :dev}]
     ]
   end
 

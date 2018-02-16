@@ -83,9 +83,9 @@ Ensure the following is added to your endpoint.ex:
       headers: [{"access-control-allow-origin", "*"}]
     )
 
-🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
                         Torch generated html for Posts!
-🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 ```
 
 Torch also installed an admin layout into your `my_app_web/templates/layout/admin.html.eex`.
@@ -100,12 +100,11 @@ You will want to update it to include your new navigation link:
 ## Styling
 
 Torch generates two CSS themes you can use: `base.css` & `theme.css`.
-The base styles are basically bare bones, and the theme styles look like the screenshots
+The base styles are basically bare bones, and the theme styles look like the screenshot
 above. Just change the stylesheet link in the `admin.html.eex` layout.
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/torch](https://hexdocs.pm/torch).
+If you want to use the theme, but override the colors, you'll need to include your
+own stylesheet with the specific overrides.
 
 ## Premium Support
 
