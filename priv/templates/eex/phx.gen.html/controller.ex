@@ -4,6 +4,8 @@ defmodule <%= inspect context.web_module %>.<%= inspect Module.concat(schema.web
   alias <%= inspect context.module %>
   alias <%= inspect schema.module %>
 
+  plug(:put_layout, {<%= inspect context.web_module %>.LayoutView, "admin.html"})
+
   def index(conn, params) do
     case <%= inspect context.alias %>.paginate_<%= schema.plural %>(params) do
       {:ok, assigns} ->

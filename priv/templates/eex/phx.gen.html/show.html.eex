@@ -5,20 +5,18 @@
   </div>
 </section>
 
-<section id="torch-show-content">
+<section id="torch-header-and-content">
   <div class="torch-container">
-    <div class="content">
-      <div class="header">
-        <h3><%= String.capitalize(schema.human_singular) %> Details</h3>
-      </div>
-      <ul>
-        <%= for {k, _} <- schema.attrs do %>
-          <li>
-            <div class="torch-show-label"><%= Phoenix.Naming.humanize(Atom.to_string(k)) %>:</div>
-            <div class="torch-show-data"><%%= @<%= schema.singular %>.<%= k %> %></div>
-          </li>
-        <% end %>
-      </ul>
+    <div class="header">
+      <h3><%= String.capitalize(schema.human_singular) %> Details</h3>
     </div>
+    <ul>
+      <%= for {k, _} <- schema.attrs do %>
+        <li>
+          <div class="torch-show-label"><%= Phoenix.Naming.humanize(Atom.to_string(k)) %>:</div>
+          <div class="torch-show-data"><%%= @<%= schema.singular %>.<%= k %> %></div>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </section>

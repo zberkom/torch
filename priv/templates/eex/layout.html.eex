@@ -1,10 +1,12 @@
 <html>
   <head>
     <title>Admin</title>
-    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/torch/base.css") %>">
+    <!-- Uncomment to just use the bare bones torch styles rather than the theme -->
+    <!--<link rel="stylesheet" href="<%= Routes.static_path(@conn, "/torch/base.css") %>">-->
+    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/torch/theme.css") %>">
   </head>
 
-  <body>
+  <body class="<%= Torch.PageView.body_classes(@conn) %>">
     <header>
       <section id="torch-account-info">
         <div class="torch-container">
@@ -20,8 +22,8 @@
               <h3>Torch</h3>
             </a>
           </div>
-          <nav>
-            <a href="/">Posts</a>
+          <nav class="torch-nav">
+            <!-- nav links here -->
           </nav>
         </div>
       </section>
@@ -33,3 +35,4 @@
     <script src="<%= Routes.static_path(@conn, "/torch/torch.js") %>"></script>
   </body>
 </html>
+

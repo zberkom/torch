@@ -27,7 +27,7 @@
     {:ok, sort_field} = Map.fetch(params, "sort_field")
 
     with {:ok, filter} <- Filtrex.parse_params(filter_config(<%= inspect String.to_atom(schema.plural) %>), params["<%= schema.singular %>"] || %{}),
-         %Scrivener.Page{} = page <- do_paginate(filter, params) do
+         %Scrivener.Page{} = page <- do_paginate_<%= schema.plural %>(filter, params) do
       {:ok,
         %{
           <%= schema.plural %>: page.entries,
@@ -46,7 +46,7 @@
     end
   end
 
-  defp do_paginate(filter, params) do
+  defp do_paginate_<%= schema.plural %>(filter, params) do
     <%= inspect schema.alias %>
     |> Filtrex.query(filter)
     |> order_by(^sort(params))

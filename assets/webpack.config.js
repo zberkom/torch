@@ -34,13 +34,15 @@ module.exports = {
     rules: [
       {
         test: /\.js?$/,
-        exclude: /(node_modules)/,
+        include: /js/,
+        exclude: /node_modules/,
         use: [
           {
             loader: 'babel-loader',
             options: {
               presets: ['es2015'],
-              plugins: ['transform-object-rest-spread']
+              plugins: ['transform-object-rest-spread'],
+              cacheDirectory: true
             }
           }
         ]
