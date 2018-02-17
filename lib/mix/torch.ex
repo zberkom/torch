@@ -11,7 +11,7 @@ defmodule Mix.Torch do
   def copy_from(apps, source_dir, target_dir, _binding, mapping) when is_list(mapping) do
     roots = Enum.map(apps, &to_app_source(&1, source_dir))
 
-    for {format, source_file_path, target_file_path} <- mapping do
+    for {_format, source_file_path, target_file_path} <- mapping do
       source =
         Enum.find_value(roots, fn root ->
           source = Path.join(root, source_file_path)

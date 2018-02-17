@@ -17,9 +17,9 @@ defmodule Mix.Tasks.Torch.Gen.Html do
   import Torch.Config, only: [otp_app: 0, template_format: 0]
 
   def run([context | args]) do
-    Mix.Task.run("torch.install", [otp_app, template_format])
+    Mix.Task.run("torch.install", [otp_app(), template_format()])
     Mix.Task.run("phx.gen.html", [context | args])
-    Mix.Task.run("torch.uninstall", [otp_app, template_format])
+    Mix.Task.run("torch.uninstall", [otp_app(), template_format()])
 
     Mix.shell().info("""
     Ensure the following is added to your endpoint.ex:

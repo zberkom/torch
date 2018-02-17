@@ -10,6 +10,8 @@ defmodule Torch.MixProject do
       compilers: [:phoenix] ++ Mix.compilers(),
       name: "Torch",
       description: "Rapid admin generator for Phoenix",
+      source_url: "https://github.com/infinitered/torch",
+      homepage_url: "https://github.com/infinitered/torch",
       package: package(),
       docs: docs(),
       deps: deps()
@@ -31,7 +33,7 @@ defmodule Torch.MixProject do
       {:scrivener_ecto, ">= 1.2.1"},
       {:filtrex, "~> 0.4.1"},
       {:credo, "~> 0.5", only: [:dev, :test]},
-      {:ex_doc, "~> 0.13", only: :dev}]
+      {:ex_doc, "~> 0.13", only: :dev}
     ]
   end
 
